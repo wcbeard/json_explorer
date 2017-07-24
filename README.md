@@ -14,7 +14,7 @@ Installation / Usage
 
 To install use pip:
 
-    $ pip install json_explorer
+    $ pip install https://github.com/wcbeard/json_explorer/archive/0.0.1.tar.gz
 
 
 Or clone the repo:
