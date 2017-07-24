@@ -1,0 +1,66 @@
+name: json_explorer
+# channels:
+#  - defaults
+#  - conda-forge
+#  - soumith
+dependencies:
+- python=2
+
+# Bare necessities
+- flake8
+- cython
+- pandas
+- xlrd
+- numba
+- seaborn
+- jupyter
+- notebook < 5
+
+# # HTML
+# - lxml
+# - beautifulsoup4
+# - requests
+# - html5lib
+
+# # ML
+# - pytorch
+# - scikit-learn
+# - torchvision
+# - gensim  # =0.12.4
+
+- joblib
+- bcolz
+
+#- pymc3
+- pip:
+  - toolz
+  - pytest
+  - feather-format  # export MACOSX_DEPLOYMENT_TARGET=10.10
+  - line-profiler
+  - jupyter_contrib_nbextensions
+
+  # DL
+  # - keras
+  # - chainer
+
+  # HTML
+  - requests_cache
+  - redis
+  - pandas_datareader
+  # - grequests
+
+  # TS
+  # - tsfresh
+  # - pyflux
+
+  # MISC
+  - fire
+  # - parsec
+  # - "ipython[notebook]<4"
+  # - snakeviz
+  # - pygraphviz
+  # - fuzzywuzzy
+  # - voluptuous
+  # - pystan
+  - python-dotenv>=0.5.1
+# - '--process-dependency-links git+https://github.com/pymc-devs/pymc3'
