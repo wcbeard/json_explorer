@@ -3,9 +3,6 @@ class AttrDict_(dict):
     >>> d = AttrDict(k='v')
     >>> d.k
     'v'
-
-    Pass _show_only_keys=False as kw to show rest of dict
-    attributes.
     """
     def __init__(self, *args, **kwargs):
         super(AttrDict_, self).__init__(*args, **kwargs)
@@ -25,10 +22,12 @@ def recurse_attr(d, dict_func=AttrDict):
     return d
 
 
-# def attr_dict(*args, **kwargs):
-#     d = AttrDict(*args, **kwargs)
-#     show_only_keys = d.pop('_show_only_keys', True)
+def attr_dict(d, only_keys=True):
+    which_dict = AttrDict if only_keys else AttrDict_
+    return recurse_attr(d, dict_func=which_dict)
+    # a = AttrDict(d)
+    # show_only_keys = d.pop('_show_only_keys', True)
 
-#     if show_only_keys:
-#         return d
-#     return AttrDict_(d)
+    # if show_only_keys:
+    #     return d
+    # return AttrDict_(d)

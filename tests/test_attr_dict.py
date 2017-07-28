@@ -1,5 +1,6 @@
 from __future__ import print_function, division
-from ..attr_dict import AttrDict_, AttrDict, recurse_attr
+
+from json_explorer.attr_dict import AttrDict_, AttrDict, recurse_attr, attr_dict
 from pytest import raises
 
 d = {
@@ -36,7 +37,9 @@ def test_recurse_attr():
 def test_dir():
     # Only keys as attrs
     d2 = recurse_attr(d, dict_func=AttrDict)
+    d2b = attr_dict(d, only_keys=True)
     assert sdir(d2) == set(d)
+    assert sdir(d2b) == set(d)
 
     # Extra dir attrs
     d3 = recurse_attr(d, dict_func=AttrDict_)
